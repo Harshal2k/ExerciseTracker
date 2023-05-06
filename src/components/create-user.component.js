@@ -32,7 +32,7 @@ export default class CreateUser extends Component {
 
         console.log(user);
 
-        axios.post('http://localhost:3006/users/add', user)
+        axios.post('https://exercisetracker-u73q.onrender.com/users/add', user)
         .then((response) => {
             if(response.data.indexOf('error')){
                 toast.info(response.data);

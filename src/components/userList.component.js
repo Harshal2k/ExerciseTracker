@@ -31,7 +31,7 @@ export default class UsersList extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3006/users/").then((response) => {
+    axios.get("https://exercisetracker-u73q.onrender.com/users/").then((response) => {
       if (response.data.indexOf("error")) {
         toast.error(response.data);
       } else {
@@ -48,7 +48,7 @@ export default class UsersList extends Component {
   }
 
   deleteUser(id) {
-    axios.delete("http://localhost:3006/users/" + id)
+    axios.delete("https://exercisetracker-u73q.onrender.com/users/" + id)
       .then((response) => {
         toast.success("User deleted successfully");
         console.log(response.data);

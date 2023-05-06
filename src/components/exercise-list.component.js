@@ -36,7 +36,7 @@ export default class ExerciseList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3006/exercises/')
+        axios.get('https://exercisetracker-u73q.onrender.com/exercises/')
             .then(response => {
                 if (response.data.indexOf('error')) {
                     toast.error(response.data);
@@ -52,7 +52,7 @@ export default class ExerciseList extends Component {
     }
 
     deleteExercise(id) {
-        axios.delete('http://localhost:3006/exercises/' + id)
+        axios.delete('https://exercisetracker-u73q.onrender.com/exercises/' + id)
             .then(response => {
                 toast.success('Log deleted successfully');
                 console.log(response.data);

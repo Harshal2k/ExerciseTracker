@@ -29,7 +29,7 @@ export default class EditExercise extends Component {
     componentDidMount() {
         let url = window.location.pathname;
         let id = url.substring(url.lastIndexOf('/') + 1);
-        axios.get('http://localhost:3006/exercises/' + id)
+        axios.get('https://exercisetracker-u73q.onrender.com/exercises/' + id)
             .then(response => {
                 // console.log(response.data)
                 this.setState({
@@ -41,7 +41,7 @@ export default class EditExercise extends Component {
             }).catch(err => {
                 console.log(err);
             })
-        axios.get('http://localhost:3006/users/')
+        axios.get('https://exercisetracker-u73q.onrender.com/users/')
             .then(response => {
                 if(response.data.indexOf('error')){
                     toast.error(response.data);
@@ -93,7 +93,7 @@ export default class EditExercise extends Component {
         let url = window.location.pathname;
         let id = url.substring(url.lastIndexOf('/') + 1);
 
-        axios.post('http://localhost:3006/exercises/update/' + id, exercises)
+        axios.post('https://exercisetracker-u73q.onrender.com/exercises/update/' + id, exercises)
             .then(response => {
                 if(response.data.indexOf('error')){
                     toast.error(response.data);
